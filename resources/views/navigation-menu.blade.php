@@ -6,7 +6,8 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="/">
-                        <img src="http://127.0.0.1/rn2/resources/img/logo.png" alt="">
+                        <img src="http://127.0.0.1/rn2/resources/img/logo.jpg" width="70" height="50" class="mt-2"
+                            alt="">
                     </a>
                 </div>
 
@@ -17,7 +18,7 @@
                     </x-nav-link>
 
                     @guest
-                    <x-nav-link href="/login">
+                    <x-nav-link href="/login" :active="request()->routeIs('login')">
                         {{ __('Login') }}
                     </x-nav-link>
                     @endguest
@@ -27,6 +28,7 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     @endauth
+
                 </div>
             </div>
 
@@ -85,6 +87,7 @@
                 @endif
 
                 <!-- Settings Dropdown -->
+                @auth
                 <div class="ml-3 relative">
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">
@@ -139,7 +142,7 @@
                         </x-slot>
                     </x-dropdown>
                 </div>
-
+                @endauth
             </div>
 
             <!-- Hamburger -->
@@ -161,35 +164,22 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link href="/home" :active="request()->routeIs('dashboard')">
-                {{ __('Home') }}
-            </x-responsive-nav-link>
-
-            @guest
-            <x-responsive-nav-link href="/login" :active="request()->routeIs('login')">
-                {{ __('Login') }}
-            </x-responsive-nav-link>
-            @endguest
-
-            @auth
             <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
-            @endauth
+
         </div>
 
-
-
         <!-- Responsive Settings Options -->
+        @auth
         <div class="pt-4 pb-1 border-t border-gray-200">
-
             <div class="flex items-center px-4">
                 @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                 <div class="shrink-0 mr-3">
                     <img class="h-10 w-10 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}"
                         alt="{{ Auth::user()->name }}" />
                 </div>
-
+                @endif
 
                 <div>
                     <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
@@ -198,7 +188,6 @@
             </div>
 
             <div class="mt-3 space-y-1">
-
                 <!-- Account Management -->
                 <x-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
                     {{ __('Profile') }}
@@ -252,7 +241,7 @@
                 @endforeach
                 @endif
             </div>
-            @endauth
         </div>
+        @endauth
     </div>
 </nav>

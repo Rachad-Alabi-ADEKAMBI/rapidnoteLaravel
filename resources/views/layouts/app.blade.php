@@ -15,9 +15,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="http://127.0.0.1/rn2/resources/css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/css/app.css', 'resources/js/app.js'])
+    <script type="javascript" src="http://127.0.0.1/rn2/resources/js/app.js"></script>
 
     <!-- Styles -->
     @livewireStyles
@@ -40,7 +45,9 @@
 
         <!-- Page Content -->
         <main>
-            {{ $slot }}
+            <div class="" id="app">
+                {{ $slot }}
+            </div>
         </main>
 
         <footer class="footer mt-5 pt-3">

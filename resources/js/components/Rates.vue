@@ -1,5 +1,181 @@
 <template>
-    Rates
+    <div class="container">
+        <div class="row" v-if="showRates">
+             <!--
+            <div class="col-sm-12 col-md-4">
+
+                <div class="card">
+                    <img class="card-img-top" src="./public/img/bitcoin.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-title">Wallet</p>
+                        <p class="card-text">
+                            <strong>
+                                Balance
+                            </strong> <br>
+                            <span> 100 ghc</span> <img
+                                src="http://127.0.0.1/rn2/resources/img/ghana-flag.png" alt=""> !
+                            <span> 10 usd</span> <img
+                                src="http://127.0.0.1/rn2/resources/img/usd.png" alt=""> !
+                            <hr>
+                        </p>
+
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins
+                                ago</small></p>
+                    </div>
+                </div>
+
+            </div>
+              -->
+            <div class="col-sm-12 col-md-5" v-for="detail in details" :key="detail.id">
+                <div class="card p-0">
+                    <img class="card-img-top"
+                    :src="getImgUrl(detail.image)" alt="">
+
+                    <div class="card-body">
+                        <p class="card-title">
+                            {{ detail.name }}
+                        </p>
+                        <div class="card-text">
+                            <div class="card-text__top">
+                                <strong>
+                                    Buying
+                                </strong>
+                                <button class="btn btn-success mr-0" @click="displayBuy(detail.id)" >
+                                    Buy
+                                </button>
+                          </div>
+                            <span>{{ detail.buying_price }} ghc</span> <img
+                                src="http://127.0.0.1/rn2/resources/img/ghana-flag.png" alt=""> !
+                            <span> {{ detail.buying_price  }} usd</span> <img
+                                src="http://127.0.0.1/rn2/resources/img/usd.png" alt=""
+                                class='flag'>
+                            <hr>
+                        </div>
+
+                        <div class="card-text">
+                          <div class="card-text__top">
+                            <strong>
+                                Selling
+                            </strong>
+                            <button class="btn btn-success" @click="displaySell(detail.id)" >
+                                Sell
+                            </button>
+                          </div>
+                            <span>{{ detail.selling_price  }} ghc</span> <img
+                                src="http://127.0.0.1/rn2/resources/img/ghana-flag.png" alt=""> !
+                            <span>{{ detail.selling_price }} 10 usd</span> <img
+                                src="http://127.0.0.1/rn2/resources/img/usd.png" alt=""
+                                class='flag'>
+                            <hr>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" v-if="showBuy">
+                        <div class="col-sm-12 col-md-6" v-for='rate in rates'
+                            :key="rate.id">
+                            <form class='form'>
+                                <h1>
+                                    Buy {{rate.name}}
+                                </h1>
+
+                                <div class="form-check form-check-inline" >
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                        id="inlineRadio1" value="" @click='getBuyingRate(rate.id)'>
+                                    <label class="form-check-label" for="inlineRadio1">
+                                        {{ rate.name }} <img :src='getImgUrl(rate.image)'>
+                                    </label>
+                                </div>
+                                <hr>
+
+                                <label for="" class="label1">
+                                    Amount you need: <br>
+                                    <input type="text" v-model="amount" @click="getNeed(amount, rate, id)"
+                                        class="input">
+                                    <div class="currency currency-gh">
+                                        ghc <img src="http://127.0.0.1/rn2/resources/img/ghana-flag.png" class="flag">
+                                    </div>
+
+                                    <div class="currency currency-usd">
+                                        {{ format(amount/10)}}
+                                        Usd <img src="http://127.0.0.1/rn2/resources/img/usd.png" class='flag'>
+                                    </div>
+
+                                    <img src="http://127.0.0.1/rn2/resources//img/visa.png" alt="" class="flag">
+                                </label>
+
+                                <label for="" class="label1">
+                                    Amount you receive: <br>
+                                    <input type="text" v-model="need" @click="getAmount(need, rate, id)" class="input">
+                                    <div class="currency currency-gh">
+                                        ghc <img src="http://127.0.0.1/rn2/resources/img/ghana-flag.png" class="flag">
+                                    </div>
+
+                                    <div class="currency currency-usd">
+                                        {{ format(need)/10}}
+                                        Usd <img src="http://127.0.0.1/rn2/resources/img/usd.png" class='flag'>
+                                    </div>
+                                </label> <br>
+
+
+
+                                <button class="btn btn-primary mx-auto text-center" @click="displayPayment()">
+                                    Next
+                                </button>
+
+                            </form>
+
+
+
+                        </div>
+
+        </div>
+
+        <div class="row" v-if='showPayment'>
+            <form class="form" >
+                <div class="form__close">
+                    <span @click='displayBuy()'>
+                        <i class="fas fa-arrow-left"></i> Previous
+                    </span>
+                </div>
+
+                <h1 class="form__title">
+                    Payment Methods
+                </h1>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="form__items__item">
+                                <img src="./public/img/img-mtn.png" alt="">
+                                <p>
+                                    MTN MOBILE MONEY
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="form__items__item">
+                                <img src="./public/img/vodafone_cash.png" alt="">
+                                <p>VODAFONE CASH</p>
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="form__items__item">
+                                <img src="./public/img/bank.jpg" alt="">
+                                <p>BANK DESPOSIT</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -11,12 +187,16 @@
   data() {
     return {
         details:[],
-        searchText: ''
+        rates: [],
+        searchText: '',
+        showRates: false,
+        showBuy: false,
+        showSell: false
 
     }
 },
 mounted: function() {
-   this.getAllCars();
+   this.getAllRates();
 },
 computed: {
             filteredItems() {
@@ -29,20 +209,48 @@ computed: {
             }
         },
 methods: {
-    getToSell(){
-        axios.get('http://127.0.0.1/rn/api/rates').then(response =>
-            this.details = response.data);
-
+    getAllRates(){
+    axios.get('http://127.0.0.1:8000/ratesApi')
+        .then(response => {
+        this.details = response.data;
+        })
+        .catch(error => {
+        console.log(error);
+        });
+    this.showRates= true;
+    this.showBuy = false;
+    this.showSell = false;
     },
-    getCar(id){
-        window.location.replace('http://127.0.0.1:8080/ad/'+id);
+    displayBuy(){
+        axios.get('http://127.0.0.1:8000/rateApi/1')
+        .then(response => {
+        this.rates = response.data;
+        })
+        .catch(error => {
+        console.log(error);
+        });
+        this.showRates= false;
+        this.showBuy = true;
+        this.showSell = false;
+    },
+    displaySell(id){
+        axios.get('http://127.0.0.1:8000/ratesApi/'+id)
+        .then(response => {
+        this.details = response.data;
+        })
+        .catch(error => {
+        console.log(error);
+        });
+        this.showRates= false;
+        this.showBuy = false;
+        this.showSell = true;
     },
     format(num){
     let res = new Intl.NumberFormat('fr-FR', { maximumSignificantDigits: 3 }).format(num);
     return res;
 },
     getImgUrl(pic) {
-    return "http://127.0.0.1/luuluilui/assets/img/" + pic;
+    return "http://127.0.0.1/rn2/resources/img/" + pic;
 },
 }
 }

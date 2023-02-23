@@ -1,6 +1,5 @@
 <x-app-layout>
     <x-slot name="header">
-
     </x-slot>
 
     <div class="py-12">
@@ -60,15 +59,18 @@
         <section class="section  " id='about'>
             <div class="container">
                 <div class="row about pt-5">
-                    <div class="col-sm-6 col-md-6 mt-3 ">
-                        <h2 class="about__item__title mt-5 text-center">
+                    <div class="col-sm-6 col-md-6">
+                        <h2 class="about__item__title mt-1 text-center">
                             ABOUT US
                         </h2>
 
-                        <p class="about__item__text mt-4">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quas doloribus veniam ut vero,
-                            iusto
-                            voluptatem, explicabo debitis natus, porro officia totam perferende!
+                        <p class="about__item__text mt-1">
+                            Welcome to our cryptocurrency marketplace, where you can easily buy and sell digital assets
+                            with other traders. Our platform provides a secure and efficient trading experience for a
+                            wide range of cryptocurrencies. With competitive pricing, a user-friendly interface, and
+                            reliable customer support, we strive to make buying and selling cryptocurrencies accessible
+                            to everyone. Whether you're an experienced trader or just starting out, our marketplace has
+                            something for you. Start trading today and join the digital revolution!
                         </p>
 
 
@@ -186,21 +188,23 @@
                     <div class="col-sm-12 col-md-6">
                         <div class="card">
 
-                            <div class="card__text text-center">
-                                <h2 class="card__text__title mt-5">
-                                    HUGE DISCOUNTS
+                            <div class="card__text ">
+                                <h2 class="card__text__title text-left">
+                                    Trade Securely and Efficiently with
+                                    Our Cryptocurrency Marketplace
                                 </h2>
 
-                                <p class="card__text__text text-center mt-3">
-                                    Create your account today and get 20% discount
-                                    for your first transaction
+                                <p class="card__text__text text-left mt-3">
+                                    Our cryptocurrency marketplace is secure, efficient, and user-friendly.
+                                    We offer fast transaction times, competitive exchange rates, and various
+                                    security measures to ensure that your account and transactions are protected.
+                                    Whether you're a beginner or an experienced trader, our platform is the perfect
+                                    place to buy and sell cryptocurrencies.
                                 </p>
 
-                                <button class="btn btn-primary text-center mx-auto">
-                                    <a href="./index.php?action=register" class="text-center mx-auto">
-                                        Create account
-                                    </a>
-                                </button>
+                                <a href="/register" class="btn btn-primary text-center mx-auto">
+                                    Create account
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -257,14 +261,11 @@
 
                         <ul>
                             <li>
-                                <i class="fas fa-phone-volume"></i> +233 55 00 00 00
-                            </li>
-                            <li>
                                 <i class="fab fa-whatsapp"></i>+233 55 00 00 00
 
                             </li>
                             <li>
-                                <i class="fas fa-envelope"></i> contact@RapidNote.com
+                                <i class="fas fa-envelope"></i> contact@rapidNote.com
                             </li>
                         </ul>
                     </div>

@@ -30,6 +30,13 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/ratesApi', [
+    App\Http\Controllers\RateController::class,
+    'getRates',
+])->name('ratesApi');
+
+Route::get('/rateApi/{id}', [
+    App\Http\Controllers\RateController::class,
+    'getRate',
+]);

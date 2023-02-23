@@ -86,11 +86,11 @@ a {
 }
 
 a:hover {
-  color: #4884B7;
+  color: #04D282;
 }
 
 h1, h2 {
-  color: #4884B7;
+  color: #04D282;
 }
 
 .link {
@@ -102,9 +102,9 @@ h1, h2 {
   padding-right: 10px;
   border-radius: 5px;
   border: 1px solid;
-  border-color: #4884B7;
+  border-color: #04D282;
   color: white;
-  background-color: #4884B7;
+  background-color: #04D282;
   cursor: pointer;
   transition: 500ms ease-in-out;
 }
@@ -115,16 +115,16 @@ h1, h2 {
 
 .link:hover {
   transform: scale(1);
-  background-color: #1a5486;
+  background-color: #00ECDE;
 }
 
 span {
   font-weight: bold;
-  color: #4884B7;
+  color: #04D282;
 }
 
 .blue {
-  color: #4884B7;
+  color: #04D282;
 }
 
 .menu-mobile {
@@ -139,7 +139,7 @@ span {
 }
 .form h1,
 .form h2 {
-  color: #4884B7;
+  color: #04D282;
 }
 .form span {
   cursor: pointer;
@@ -157,14 +157,14 @@ span {
 }
 .form .label1 .input {
   width: 120px;
-  color: #4884B7;
+  color: #04D282;
 }
 .form .label1 .currency-gh {
   position: absolute;
   top: 32px;
   left: 125px;
   width: 100%;
-  color: #4884B7;
+  color: #04D282;
   font-weight: bold;
 }
 .form .label1 .currency-usd {
@@ -173,7 +173,7 @@ span {
   left: 220px;
   font-weight: bold;
   width: 100%;
-  color: #4884B7;
+  color: #04D282;
 }
 
 .dashboard__menu {
@@ -199,7 +199,7 @@ span {
   margin-right: 10px;
 }
 .dashboard__menu ul li .btn:hover {
-  background-color: #4884B7;
+  background-color: #04D282;
 }
 .dashboard__content .container .card .card-img-top {
   width: 90px;
@@ -226,7 +226,7 @@ span {
   cursor: pointer;
 }
 .dashboard__content .container .card .card-body .card-text i:hover {
-  color: #4884B7;
+  color: #04D282;
   font-weight: bold;
 }
 
@@ -242,7 +242,7 @@ span {
   margin: 30px auto 10px auto;
 }
 .simulator h2 {
-  color: #4884B7;
+  color: #04D282;
   font-size: 1.8em;
   text-align: center;
 }
@@ -268,9 +268,9 @@ span {
   padding-right: 10px;
   border-radius: 5px;
   border: 1px solid;
-  border-color: #4884B7;
+  border-color: #04D282;
   color: white;
-  background-color: #4884B7;
+  background-color: #04D282;
   cursor: pointer;
 }
 .simulator__buttons .link a {
@@ -288,7 +288,7 @@ span {
   margin: 60px auto;
 }
 .payments__title {
-  color: #4884B7;
+  color: #04D282;
   font-size: 1.8em;
   text-align: center;
 }
@@ -358,7 +358,7 @@ span {
   height: 80px;
   border-radius: 80px;
   color: white;
-  background-color: #4884B7;
+  background-color: #04D282;
   display: table;
   font-weight: bold;
   margin: auto;
@@ -391,7 +391,7 @@ span {
   margin: auto;
 }
 .section .container .care .card__text__title {
-  color: #4884B7;
+  color: #04D282;
   font-size: 1.8em;
   text-align: center;
 }
@@ -431,7 +431,7 @@ span {
   margin: auto;
 }
 .section .container .contact ul li i {
-  color: #4884B7;
+  color: #04D282;
   font-weight: bold;
 }
 
@@ -489,7 +489,7 @@ span {
 }
 
 .table th {
-  background-color: #4884B7;
+  background-color: #04D282;
   color: #ffffff;
 }
 
