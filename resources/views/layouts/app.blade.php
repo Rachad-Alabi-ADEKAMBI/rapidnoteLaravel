@@ -8,8 +8,12 @@
 
     <title>{{ config('app.name', 'rapidnote') }}</title>
 
-    <!-- Fonts -->
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/css/app.css', 'resources/js/app.js'])
+    <script type="javascript" src="http://127.0.0.1/rn2/resources/js/app.js"></script>
 
+    <!-- Styles -->
+    @livewireStyles
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
@@ -20,12 +24,6 @@
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/css/app.css', 'resources/js/app.js'])
-    <script type="javascript" src="http://127.0.0.1/rn2/resources/js/app.js"></script>
-
-    <!-- Styles -->
-    @livewireStyles
 </head>
 
 <body class="font-sans antialiased">
@@ -37,7 +35,7 @@
         <!-- Page Heading -->
         @if (isset($header))
         <header class="bg-white shadow">
-            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto py-1 px-4 sm:px-6 lg:px-8">
                 {{ $header }}
             </div>
         </header>

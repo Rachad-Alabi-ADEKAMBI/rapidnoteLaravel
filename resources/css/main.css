@@ -70,15 +70,15 @@ a:hover {
 .btn-primary {
   margin: 5px;
   width: auto;
-}
-.btn-primary a {
+  background-color: #04D282;
   color: white;
   font-weight: bold;
 }
 
-.btn-primary:hover a {
+.btn-primary:hover {
   color: white;
   text-decoration: none;
+  background-color: #00ECDE;
 }
 
 a {
@@ -180,25 +180,21 @@ span {
   background-color: #535353;
   height: 80vh;
 }
-.dashboard__menu ul li {
+.dashboard__menu .menu ul li {
   margin: 15px auto;
   text-align: center;
 }
-.dashboard__menu ul li .btn {
-  background-color: #535353;
-  border: none;
-  width: 200px;
-  margin: auto;
-  text-align: left;
-}
-.dashboard__menu ul li .btn a {
+.dashboard__menu .menu ul li a {
   color: white;
   text-align: left;
+  width: 200px;
+  border: none;
+  background-color: #535353;
 }
-.dashboard__menu ul li .btn a i {
+.dashboard__menu .menu ul li a i {
   margin-right: 10px;
 }
-.dashboard__menu ul li .btn:hover {
+.dashboard__menu .menu ul a:hover {
   background-color: #04D282;
 }
 .dashboard__content .container .card .card-img-top {

@@ -136,18 +136,15 @@ a:hover{
 .btn-primary{
     margin: 5px;
     width: auto;
-
-    a{
+    background-color: $blue;
         color: $white;
         font-weight: bold;
-    }
 }
 
 .btn-primary:hover{
-    a{
         color: $white;
         text-decoration: none;
-    }
+        background-color: $blue-dark;
 }
 
 
@@ -252,21 +249,17 @@ span{
         background-color: $grey-light;
         height: 80vh;
 
+       .menu{
         ul{
             li{
                 margin: 15px auto;
                 text-align: center;
-
-                .btn{
-                    background-color: $grey-light;
-                    border: none;
-                    width: 200px;
-                    margin: auto;
-                    text-align: left;
-
-                    a{
+                a{
                         color: $white;
                         text-align: left;
+                        width: 200px;
+                        border: none;
+                        background-color: $grey-light;
 
                         i{
                             margin-right: 10px;
@@ -274,11 +267,13 @@ span{
                     }
                 }
 
-                .btn:hover{
+                a:hover{
                     background-color: $blue;
                 }
-            }
+
+
         }
+       }
     }
 
     &__content{
