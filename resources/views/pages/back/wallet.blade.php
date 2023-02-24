@@ -12,8 +12,8 @@
                         @include('pages/back/menu')
                     </div>
 
-                    <div class="col-md-12 col-lg-9 dashboard__content" id="Rates">
-                        <Rates />
+                    <div class="col-md-12 col-lg-9 dashboard__content" id="Wallet">
+                        <Wallet />
                     </div>
                 </div>
             </div>

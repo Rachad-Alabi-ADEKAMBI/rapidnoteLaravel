@@ -14,23 +14,31 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('pages/front/home');
 });
 
 Route::get('/home', function () {
-    return view('home');
+    return view('pages/front/home');
 });
 
 Route::get('/about', function () {
-    return view('about');
+    return view('pages/front/about');
 });
 
 Route::get('/support', function () {
-    return view('support');
+    return view('pages/front/support');
 });
 
 Route::get('/contact', function () {
-    return view('contact');
+    return view('pages/front/contact');
+});
+
+Route::get('/users', function () {
+    return view('pages/back/users');
+});
+
+Route::get('/wallet', function () {
+    return view('pages/back/wallet');
 });
 
 Route::middleware([
@@ -39,14 +47,29 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return view('/pages/back/dashboard');
     })->name('dashboard');
 });
+
+Route::get('/myTransactions', [
+    App\Http\Controllers\RateController::class,
+    'getMyTransactions',
+])->name('myTransactionsApi');
 
 Route::get('/ratesApi', [
     App\Http\Controllers\RateController::class,
     'getRates',
 ])->name('ratesApi');
+
+Route::get('/usersApi', [
+    App\Http\Controllers\UserController::class,
+    'getUsers',
+])->name('usersApi');
+
+Route::get('/userApi/{id}', [
+    App\Http\Controllers\UserController::class,
+    'getUser',
+]);
 
 Route::get('/rateApi/{id}', [
     App\Http\Controllers\RateController::class,

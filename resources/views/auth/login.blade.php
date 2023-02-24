@@ -1,7 +1,6 @@
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo />
         </x-slot>
 
         <x-validation-errors class="mb-4" />
@@ -13,6 +12,8 @@
         @endif
 
         <form method="POST" action="{{ route('login') }}">
+            <img src="http://127.0.0.1/rn2/resources/img/logo.png" width="200" height="150" class="mx-auto" alt=""> <br>
+
             @csrf
 
             <div>
@@ -46,7 +47,7 @@
                 </a>
                 @endif
 
-                <x-button class="ml-4">
+                <x-button class="ml-4 btn btn-primary">
                     {{ __('Log in') }}
                 </x-button>
             </div>

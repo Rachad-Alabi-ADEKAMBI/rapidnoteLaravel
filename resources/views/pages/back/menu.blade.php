@@ -9,7 +9,7 @@
         </li>
 
         <li>
-            <a href="./index.php?action=wallet" class='btn btn-primary'>
+            <a href="/wallet" class='btn btn-primary'>
                 <i class="fas fa-wallet"></i> Wallet
             </a>
             </butto>
@@ -18,7 +18,7 @@
 
 
         <li>
-            <a href="MyTransactions" class='btn btn-primary'>
+            <a href="/myTransactions" class='btn btn-primary'>
                 <i class="fas fa-list"></i> My transactions
             </a>
         </li>
@@ -49,7 +49,7 @@
 
         <li>
             <button class="btn btn-primary">
-                <a href="">
+                <a href="/webmail">
                     <i class="fas fa-envelope"></i> Webmail
                 </a>
             </button>
