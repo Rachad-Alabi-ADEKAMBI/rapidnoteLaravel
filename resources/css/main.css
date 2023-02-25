@@ -71,6 +71,7 @@ a:hover {
   margin: 5px;
   width: auto;
   background-color: #04D282;
+  border: #04D282;
   color: white;
   font-weight: bold;
 }
@@ -79,6 +80,7 @@ a:hover {
   color: white;
   text-decoration: none;
   background-color: #00ECDE;
+  border: #00ECDE;
 }
 
 a {
@@ -198,18 +200,27 @@ span {
   background-color: #04D282;
 }
 .dashboard__content .container .card .card-img-top {
-  width: 90px;
-  height: 60px;
+  width: 100%;
+  text-align: center;
+}
+.dashboard__content .container .card .card-img-top i {
+  font-size: 3em;
+  margin: 10px auto;
+  color: #04D282;
 }
 .dashboard__content .container .card .card-body .card-title {
   font-weight: bold;
 }
 .dashboard__content .container .card .card-body .card-text {
   width: 100%;
+  text-align: center;
 }
 .dashboard__content .container .card .card-body .card-text strong {
-  text-decoration: underline;
-  font-size: 1em;
+  font-size: 2em;
+  font-weight: bold;
+  color: #04D282;
+  text-align: center;
+  margin: auto;
 }
 .dashboard__content .container .card .card-body .card-text span {
   font-size: 0.8em;
@@ -218,12 +229,38 @@ span {
   width: 15px;
   height: 10px;
 }
-.dashboard__content .container .card .card-body .card-text i {
-  cursor: pointer;
+.dashboard__content .container .card .card-body .currencies {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+  justify-content: start;
+  width: 250px;
+  margin: 10px auto 0 auto;
 }
-.dashboard__content .container .card .card-body .card-text i:hover {
-  color: #04D282;
-  font-weight: bold;
+.dashboard__content .container .card .card-body .currencies .currency {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+}
+.dashboard__content .container .card .card-body .currencies .currency img {
+  width: 30px;
+  height: 15px;
+  margin: 8px auto auto 5px;
+}
+.dashboard__content .container .card .buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+  width: 100%;
+}
+.dashboard__content .container .card .buttons .btn {
+  width: 150px;
 }
 
 .simulator {

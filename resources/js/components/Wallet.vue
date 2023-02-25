@@ -1,59 +1,48 @@
 <template>
-    <div class="container">
+   <div class="container">
         <div class="row" v-if="showWallet">
-             <!--
-            <div class="col-sm-12 col-md-4">
-
-                <div class="card">
-                    <img class="card-img-top" src="./public/img/bitcoin.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-title">Wallet</p>
-                        <p class="card-text">
-                            <strong>
-                                Balance
-                            </strong> <br>
-                            <span> 100 ghc</span> <img
-                                src="http://127.0.0.1/rn2/resources/img/ghana-flag.png" alt=""> !
-                            <span> 10 usd</span> <img
-                                src="http://127.0.0.1/rn2/resources/img/usd.png" alt=""> !
-                            <hr>
-                        </p>
-
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins
-                                ago</small></p>
-                    </div>
-                </div>
-
-            </div>
-              -->
-            <div class="col-sm-12 col-md-5" v-for="detail in details" :key="detail.id">
+                   <div class="col-sm-12 col-md-5" >
                 <div class="card p-0">
-                    <i class="card-img-top" ></i>
+                    <div class="card-img-top" >
+                        <i class="fas fa-wallet main-icon"></i>
+                    </div>
 
                     <div class="card-body">
                         <p class="card-title">
-                            Wallet
+                            Current balance:
                         </p>
                         <div class="card-text">
                             <div class="card-text__top">
                                 <strong>
-                                    {{ detail.balance }} ghc
+                                   10 ghc
                                 </strong>
-                                <button class="btn btn-success mr-0" @click="displayBuy(detail.id)" >
-                                    Add
-                                </button>
 
-                                <button class="btn btn-danger mr-0" @click="displayBuy(detail.id)" >
-                                    Sell
-                                </button>
+                               </div>
                           </div>
-                            <span>{{ detail.balance }} ghc</span> <img
+                          <div class="currencies">
+                            <div class="currency">
+                                <span>12 ghc</span> <img
                                 src="http://127.0.0.1/rn2/resources/img/ghana-flag.png" alt=""> !
-                            <span> {{ detail.balance  }} usd</span> <img
+
+                            </div>
+
+                            <div class="currency">
+                                <span> 12 usd</span> <img
                                 src="http://127.0.0.1/rn2/resources/img/usd.png" alt=""
                                 class='flag'>
+                            </div>
+                          </div>
                             <hr>
-                        </div>
+                     </div>
+
+                        <div class="buttons">
+                                 <button class="btn btn-success mr-0" @click="displayLoad()">
+                                    Load
+                                </button>
+
+                                <button class="btn btn-danger mr-0" @click="displayWithdraw()" >
+                                    Withdraw
+                                </button>
 
 
                     </div>
@@ -63,7 +52,9 @@
 
         <div class="row" v-if="showWithdraw">
                         <div class="col-sm-12 col-md-6">
-                                    withdraw
+                                   <form action="">
+
+                                   </form>
                         </div>
 
         </div>
@@ -86,11 +77,11 @@
         showWallet: false,
         showLoad: false,
         showWithdraw: false
-
     }
 },
 mounted: function() {
-   this.getMyDetails();
+   this.getDetails();
+   this.getCurrentUserId();
 },
 computed: {
             filteredItems() {
@@ -103,9 +94,11 @@ computed: {
             }
         },
 methods: {
-    getMyDetails(){
-        const userId = this.getCurrentUserId();
-    axios.get(`http://127.0.0.1:8000/userApi/${userId}`)
+    getCurrentUserId() {
+      return '{{ Auth::id() }}'; // Get the current user ID using the auth helper function
+    },
+    getDetails(){
+    axios.get(`http://127.0.0.1:8000/userApi/1`)
         .then(response => {
         this.details = response.data;
         })
@@ -113,32 +106,18 @@ methods: {
         console.log(error);
         });
     this.showWallet= true;
-    this.showWithdraw = false;
     this.showLoad = false;
-    },
-    getAdd(){
-    axios.get('http://127.0.0.1:8000/userApi')
-        .then(response => {
-        this.details = response.data;
-        })
-        .catch(error => {
-        console.log(error);
-        });
-    this.showWallet= false;
     this.showWithdraw = false;
+    },
+    displayLoad(){
+        this.showWallet= false;
     this.showLoad = true;
+    this.showWithdraw = false;
     },
-    getWithdraw(){
-    axios.get('http://127.0.0.1:8000/userApi')
-        .then(response => {
-        this.details = response.data;
-        })
-        .catch(error => {
-        console.log(error);
-        });
-    this.showWallet= false;
-    this.showWithdraw = true;
+    displayWithdraw(){
+        this.showWallet= false;
     this.showLoad = false;
+    this.showWithdraw = true;
     },
     format(num){
     let res = new Intl.NumberFormat('fr-FR', { maximumSignificantDigits: 3 }).format(num);
@@ -146,10 +125,7 @@ methods: {
 },
     getImgUrl(pic) {
     return "http://127.0.0.1/rn2/resources/img/" + pic;
-},
-getCurrentUserId() {
-      return '{{ Auth::id() }}'; // Get the current user ID using the auth helper function
-    }
+}
 }
 }
 </script>

@@ -137,6 +137,7 @@ a:hover{
     margin: 5px;
     width: auto;
     background-color: $blue;
+    border: $blue;
         color: $white;
         font-weight: bold;
 }
@@ -145,6 +146,7 @@ a:hover{
         color: $white;
         text-decoration: none;
         background-color: $blue-dark;
+        border: $blue-dark;
 }
 
 
@@ -280,8 +282,14 @@ span{
        .container{
             .card{
                 .card-img-top{
-                    width: 90px;
-                    height: 60px;
+                    width: 100%;
+                    text-align: center;
+
+                    i{
+                        font-size: 3em;
+                        margin: 10px  auto;
+                        color: $blue;
+                    }
                 }
 
                 .card-body{
@@ -291,9 +299,13 @@ span{
 
                     .card-text{
                         width: 100%;
+                        text-align: center;
                         strong{
-                            text-decoration: underline;
-                            font-size: 1em;
+                            font-size: 2em;
+                            font-weight: bold;
+                            color: $blue;
+                            text-align: center;
+                            margin: auto;
                         }
 
                         span{
@@ -305,17 +317,33 @@ span{
                             width: 15px;
                             height: 10px;
                         }
+                    }
 
-                        .currency{}
+                    .currencies{
+                        @include flex();
+                        justify-content: start;
+                        width: 250px;
+                        margin: 10px auto 0 auto;
 
-                        i{
-                            cursor: pointer;
+                        .currency{
+                            @include flex();
+                                img{
+                                    width: 30px;
+                                    height: 15px;
+                                    margin: 8px auto auto 5px;
+                                }
+
                         }
+                    }
+                }
 
-                        i:hover{
-                            color: $blue;
-                            font-weight: bold;
-                        }
+
+                .buttons{
+                    @include flex();
+                    width: 100%;
+
+                    .btn{
+                        width: 150px;
                     }
                 }
             }

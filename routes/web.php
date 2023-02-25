@@ -51,10 +51,19 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('/myTransactions', [
-    App\Http\Controllers\RateController::class,
-    'getMyTransactions',
-])->name('myTransactionsApi');
+Route::get('/myTransactions', function () {
+    return view('/pages/back/myTransactions');
+});
+
+Route::get('/transactionsApi', [
+    App\Http\Controllers\TransactionController::class,
+    'getTransactions',
+]);
+
+Route::get('/transactionApi/{id}', [
+    App\Http\Controllers\TransactionController::class,
+    'getTransaction',
+]);
 
 Route::get('/ratesApi', [
     App\Http\Controllers\RateController::class,

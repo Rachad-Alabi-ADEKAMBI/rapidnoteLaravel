@@ -4,7 +4,7 @@
             <div class="col">
                 <div class="table-responsive">
                     <table class="table">
-  <caption>List of users</caption>
+  <caption>My Transactions</caption>
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -37,27 +37,17 @@
   data() {
     return {
         details:[],
-        showWallet: false
+        showTransactions: false
 
     }
 },
 mounted: function() {
- //  this.getMyDetails();
+   this.getMyTransactions();
 },
-computed: {
-            filteredItems() {
-                this.showAll = false;
-                this.showSearch = true;
-                return this.details.filter(ad => {
-                    return ad.name.toLowerCase().includes(this.searchText.toLowerCase()) &&
-                        ad.brand_name.toLowerCase().includes(this.searchText.toLowerCase())
-                })
-            }
-        },
 methods: {
-    getMyDetails(){
+    getMyTransactions(){
         const userId = this.getCurrentUserId();
-    axios.get(`http://127.0.0.1:8000/userApi/${userId}`)
+    axios.get(`http://127.0.0.1:8000/transactionApi/${userId}`)
         .then(response => {
         this.details = response.data;
         })
