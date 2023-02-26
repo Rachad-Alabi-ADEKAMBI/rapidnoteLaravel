@@ -10,12 +10,22 @@ const app = createApp({
 })
 
 import Wallet from '@/components/Wallet.vue'
+import Wallet2 from '@/components/Wallet2.vue'
 import Rates from '@/components/Rates.vue'
-import MyTransactions from '@/components/MyTransactions.vue'
 
-app.component('Rates', Rates)
+import Rates2 from '@/components/admin/Rates2.vue'
+import Transactions from '@/components/admin/Transactions.vue'
+import Users from '@/components/admin/Users.vue'
+import Payments from '@/components/admin/Payments.vue'
+
 app.component('Wallet', Wallet)
-app.component('MyTransactions', MyTransactions)
+app.component('Wallet2', Wallet2)
+app.component('Rates', Rates)
+
+app.component('Rates2', Rates2)
+app.component('Transactions', Transactions)
+app.component('Users', Users)
+app.component('Payments', Payments)
 app.mount("#app")
 
 window.Alpine = Alpine;

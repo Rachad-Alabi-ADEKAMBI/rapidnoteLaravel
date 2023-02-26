@@ -31,11 +31,10 @@
                                 src="http://127.0.0.1/rn2/resources/img/usd.png" alt=""
                                 class='flag'>
                             </div>
-                          </div>
+                            </div>
                             <hr>
-                     </div>
 
-                        <div class="buttons">
+                            <div class="buttons">
                                  <button class="btn btn-success mr-0" @click="displayLoad()">
                                     Load
                                 </button>
@@ -43,25 +42,71 @@
                                 <button class="btn btn-danger mr-0" @click="displayWithdraw()" >
                                     Withdraw
                                 </button>
+                        </div>
+                        </div>
 
 
-                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="row" v-if="showWithdraw">
-                        <div class="col-sm-12 col-md-6">
-                                   <form action="">
+        <div class="row" v-if='showWithdraw'>
+            <div class="form mx-left bg-light text-center ml-0">
 
-                                   </form>
-                        </div>
+                <h2 class="subtitle">
+                    Withdraw
+                </h2> <br>
+                        <div class="form-group col-md-8  text-left ">
+                            <label for="inputEmail4 text-left">Amount:</label>
+                            <input type="email" class="form-control"
+                            placeholder="amount to withdraw " id="inputEmail4">
+                        </div> <br>
 
-        </div>
+                       <p class="text text-left">
+                            Balance after transaction: <span>102 ghc</span>
+                       </p> <br>
+
+                       <div class="buttons">
+                        <button class="btn btn-danger" @click="getDetails()">
+                        Previous
+                       </button>
+
+                       <button class="btn btn-primary" @click="displayPayment()">
+                        Next
+                       </button>
+                       </div>
+                    </div>
+                           </div>
 
         <div class="row" v-if='showLoad'>
-           load
-        </div>
+            <div class="form mx-left bg-light text-center ml-0">
+                <i class="bi bi-x-lg" @click="getDetails()"></i>
+
+                <h2 class="subtitle">
+                    Load wallet
+                </h2> <br>
+                        <div class="form-group col-md-8  text-left ">
+                            <label for="inputEmail4 text-left">Amount:</label>
+                            <input type="email" class="form-control"
+                            placeholder="amount to load " id="inputEmail4">
+                        </div> <br>
+
+                       <p class="text text-left">
+                            Balance after transaction: <span>102 ghc</span>
+                       </p> <br>
+
+
+                       <div class="buttons">
+                        <button class="btn btn-danger" @click="getDetails()">
+                        Previous
+                       </button>
+
+                       <button class="btn btn-primary" @click="displayPayment()">
+                        Next
+                       </button>
+                       </div>
+                    </div>
+                           </div>
     </div>
 </template>
 

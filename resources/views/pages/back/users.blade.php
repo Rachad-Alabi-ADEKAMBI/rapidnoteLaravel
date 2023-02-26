@@ -12,11 +12,11 @@
                         @include('pages/back/menu')
                     </div>
 
-                    <div class="col-md-12 col-lg-9 dashboard__content" id="Wallet">
+                    <div class="col-md-12 col-lg-9 dashboard__content" id="Users">
                         <p class="text text-bold">
-                            /wallet
+                            /users
                         </p>
-                        <Wallet />
+                        <Users />
                     </div>
                 </div>
             </div>

@@ -12,8 +12,22 @@
                         @include('pages/back/menu')
                     </div>
 
-                    <div class="col-md-12 col-lg-9 dashboard__content" id="Rates">
-                        <Rates />
+                    <div class="col-md-12 col-lg-9 dashboard__content">
+                        <?php if (auth()->user()->role === 'admin') { ?>
+                        <p class="text text-bold">
+                            /rates
+                        </p>
+                        <div class="" id="RatesAdmin">
+                            <Rates2 />
+                        </div>
+                        <?php } else { ?>
+                        <p class="text text-bold">
+                            /marketplace
+                        </p>
+                        <div class="" id="Rates">
+                            <Rates />
+                        </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>

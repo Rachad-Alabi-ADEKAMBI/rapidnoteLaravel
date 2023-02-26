@@ -95,8 +95,6 @@ $black: #202022;
 }
 
 @mixin input{
-    width: 250px;
-    height: 35px;
     border: none;
     border-radius: 5px;
     font-weight: bold;
@@ -105,8 +103,6 @@ $black: #202022;
 }
 
 @mixin select{
-    width: 220px;
-    height: 35px;
     border: 1px solid;
     border-radius: 5px;
 }
@@ -186,11 +182,6 @@ span{
     color: $blue;
 }
 
-
-.menu-mobile{
-    display: none;
-}
-
 .form{
     background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
     background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -252,33 +243,61 @@ span{
         height: 80vh;
 
        .menu{
-        ul{
-            li{
-                margin: 15px auto;
-                text-align: center;
-                a{
-                        color: $white;
-                        text-align: left;
-                        width: 200px;
-                        border: none;
-                        background-color: $grey-light;
+        &__icon{
+            text-align: center;
+            height: 60px;
+            padding-top: 10px;
+            display: none;
 
-                        i{
-                            margin-right: 10px;
+            i{
+                color: $blue;
+                font-size: 1.9em;
+                font-weight: bold;
+                text-align: center;
+                margin: auto;
+                cursor: pointer;
+            }
+
+            i:hover{
+                color: $blue-dark;
+                font-size: larger;
+                font-weight: bolder;
+            }
+        }
+
+        &__items{
+            ul{
+                li{
+                    margin: 15px auto;
+                    text-align: center;
+                    a{
+                            color: $white;
+                            text-align: left;
+                            width: 200px;
+                            border: none;
+                            background-color: $grey-light;
+
+                            i{
+                                margin-right: 10px;
+                            }
                         }
                     }
-                }
 
-                a:hover{
-                    background-color: $blue;
-                }
-
-
+                    a:hover{
+                        background-color: $blue;
+                    }
+            }
         }
        }
     }
 
     &__content{
+        .text-bold{
+            color: $grey-light;
+            font-style: italic;
+            font-size: 0.8em;
+            font-weight: 500    ;
+        }
        .container{
             .card{
                 .card-img-top{
@@ -286,27 +305,49 @@ span{
                     text-align: center;
 
                     i{
-                        font-size: 3em;
+                        font-size: 2.7em;
                         margin: 10px  auto;
                         color: $blue;
+                    }
+
+                    img{
+                        width: 60px;
+                        height: 60px;
+                        margin: 5px auto;
                     }
                 }
 
                 .card-body{
                     .card-title{
                         font-weight: bold;
+                        text-align: center;
+                        font-size: 1.7em;
                     }
 
                     .card-text{
-                        width: 100%;
-                        text-align: center;
-                        strong{
-                            font-size: 2em;
-                            font-weight: bold;
-                            color: $blue;
-                            text-align: center;
-                            margin: auto;
+                        width: 80%;
+                        margin: auto;
+
+
+                        &__top{
+
+                            strong{
+                                font-size: 1.2em;
+                                font-weight: bold;
+                                color: $black;
+                                text-align: center;
+                                float: left;
+                            }
+                            button{
+                                float: right;
+                                color: $white;
+
+                                i{
+                                    color: $white;
+                                }
+                            }
                         }
+
 
                         span{
                             font-size: 0.8em;
@@ -317,35 +358,41 @@ span{
                             width: 15px;
                             height: 10px;
                         }
+
                     }
 
                     .currencies{
                         @include flex();
                         justify-content: start;
-                        width: 250px;
+                        width: 230px;
                         margin: 10px auto 0 auto;
 
                         .currency{
                             @include flex();
+                            span{
+                                color: $black;
+                            }
                                 img{
-                                    width: 30px;
+                                    width: 25px;
                                     height: 15px;
                                     margin: 8px auto auto 5px;
                                 }
 
                         }
                     }
-                }
 
+                    .buttons{
+                        @include flex();
+                        width: 100%;
 
-                .buttons{
-                    @include flex();
-                    width: 100%;
-
-                    .btn{
-                        width: 150px;
+                        .btn{
+                            width: 130px;
+                        }
                     }
                 }
+
+
+
             }
        }
     }
@@ -551,6 +598,41 @@ span{
                 }
             }
         }
+
+        .row{
+            .search-icon{
+                @include flex();
+                text-align: left;
+                width: 50px;
+                margin: auto 0;
+
+                i{
+                    cursor: pointer;
+                    margin-left: 12px;
+                    margin-bottom: 8px;
+                }
+
+                i:hover{
+                    color: $blue-dark;
+                }
+            }
+
+            .search-bar{
+                @include flex();
+                margin: auto 15px;
+
+                i{
+                    margin: 9px auto auto 5px;
+                    cursor: pointer;
+                }
+
+                i:hover{
+                    color: $blue-dark;
+                }
+
+
+            }
+        }
     }
 }
 
@@ -597,9 +679,9 @@ span{
 }
 
 .table{
-	width: 98%;
+	width: 100%;
 	border-collapse: collapse;
-	margin: auto;
+	margin: auto 0;
 	font-family: sans-serif;
 }
 
@@ -656,27 +738,48 @@ span{
 
 
 /*responsive*/
+/*
 @media(min-width: 1024px) and(max-width: 1279px){
     .dashboard{
-        &__menu{
-            display: none;
+            .menu{
+            &__icon{
+
+            }
+
+
         }
 
         &__content{
             width: 100%;
         }
     }
-}
 
-
+*/
 @media(min-width: 768px) and(max-width: 1023px){
+
     .dashboard{
-        &__menu{
-            display: none;
-        }
+       &__menu{
+        height: auto;
+        .menu{
+            &__icon{
+                display: block;
+            }
+
+                &__items{
+                    display: none;
+
+                    ul{
+                        display: none;
+                    }
+                }
+            }
+       }
 
         &__content{
             width: 100%;
+            padding-top: 20px;
+
+
 
             &__boxes{
                 .box{
@@ -698,7 +801,7 @@ span{
 
             }
         }
-    }
+       }
 
 
     .top{
@@ -757,8 +860,6 @@ span{
         flex-direction: column;
 
     }
-
-
 }
 
 @media(min-width: 480px) and(max-width: 767px){

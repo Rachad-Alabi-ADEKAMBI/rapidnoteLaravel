@@ -1,36 +1,13 @@
 <template>
     <div class="container">
         <div class="row" v-if="showRates">
-             <!--
-            <div class="col-sm-12 col-md-4">
-
-                <div class="card">
-                    <img class="card-img-top" src="./public/img/bitcoin.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-title">Wallet</p>
-                        <p class="card-text">
-                            <strong>
-                                Balance
-                            </strong> <br>
-                            <span> 100 ghc</span> <img
-                                src="http://127.0.0.1/rn2/resources/img/ghana-flag.png" alt=""> !
-                            <span> 10 usd</span> <img
-                                src="http://127.0.0.1/rn2/resources/img/usd.png" alt=""> !
-                            <hr>
-                        </p>
-
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins
-                                ago</small></p>
-                    </div>
-                </div>
-
-            </div>
-              -->
             <div class="col-sm-12 col-md-5" v-for="detail in details" :key="detail.id">
                 <div class="card p-0">
-                    <img class="card-img-top"
+                   <div class="card-img-top">
+                    <img
                     :src="getImgUrl(detail.image)" alt="">
 
+                   </div>
                     <div class="card-body">
                         <p class="card-title">
                             {{ detail.name }}
@@ -40,34 +17,71 @@
                                 <strong>
                                     Buying
                                 </strong>
-                                <button class="btn btn-success mr-0" @click="displayBuy(detail.id)" >
-                                    Buy
-                                </button>
-                          </div>
-                            <span>{{ detail.buying_price }} ghc</span> <img
-                                src="http://127.0.0.1/rn2/resources/img/ghana-flag.png" alt=""> !
-                            <span> {{ detail.buying_price  }} usd</span> <img
-                                src="http://127.0.0.1/rn2/resources/img/usd.png" alt=""
-                                class='flag'>
-                            <hr>
-                        </div>
 
-                        <div class="card-text">
-                          <div class="card-text__top">
-                            <strong>
-                                Selling
-                            </strong>
-                            <button class="btn btn-success" @click="displaySell(detail.id)" >
-                                Sell
-                            </button>
                           </div>
-                            <span>{{ detail.selling_price  }} ghc</span> <img
-                                src="http://127.0.0.1/rn2/resources/img/ghana-flag.png" alt=""> !
-                            <span>{{ detail.selling_price }} 10 usd</span> <img
+                        </div>
+                        <hr>
+
+                        <div class="currencies">
+                            <div class="currency">
+                                <span>12 ghc</span> <img
+                                src="http://127.0.0.1/rn2/resources/img/ghana-flag.png" alt="">
+
+                            </div>
+                            |
+                            <div class="currency">
+                                <span> 12 usd</span> <img
                                 src="http://127.0.0.1/rn2/resources/img/usd.png" alt=""
                                 class='flag'>
-                            <hr>
+                            </div>
+                          </div>
+
+                         <div class="card-text">
+                            <div class="card-text__top">
+                                <button class="btn btn-primary mr-0" @click=displayBuy(detail.id)>
+                                    <i class="fas fa-cart-shopping mr-1"></i> Buy
+                                </button>
+                            </div>
+                         </div>
+
+                          <hr>
+                          <br>
+
+
+                          <div class="card-text">
+                            <div class="card-text__top">
+                                <strong>
+                                    Selling
+                                </strong>
+
+                          </div>
                         </div>
+                        <hr>
+
+                        <div class="currencies">
+                            <div class="currency">
+                                <span>12 ghc</span> <img
+                                src="http://127.0.0.1/rn2/resources/img/ghana-flag.png" alt="">
+
+                            </div>
+                            |
+                            <div class="currency">
+                                <span> 12 usd</span> <img
+                                src="http://127.0.0.1/rn2/resources/img/usd.png" alt=""
+                                class='flag'>
+                            </div>
+                          </div>
+
+                         <div class="card-text">
+                            <div class="card-text__top">
+                                <button class="btn btn-primary mr-0" @click="displayBuy(detail.id)" >
+                                    <i class="fas fa-shop mr-1"></i>sell
+                                </button>
+                            </div>
+                         </div>
+
+                          <hr>
+                          <br>
 
 
                     </div>

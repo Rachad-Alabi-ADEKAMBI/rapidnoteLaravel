@@ -55,6 +55,18 @@ Route::get('/myTransactions', function () {
     return view('/pages/back/myTransactions');
 });
 
+Route::get('/transactions', function () {
+    return view('/pages/back/transactions');
+});
+
+Route::get('/payments', function () {
+    return view('/pages/back/payments');
+});
+
+Route::get('/users', function () {
+    return view('/pages/back/users');
+});
+
 Route::get('/transactionsApi', [
     App\Http\Controllers\TransactionController::class,
     'getTransactions',
