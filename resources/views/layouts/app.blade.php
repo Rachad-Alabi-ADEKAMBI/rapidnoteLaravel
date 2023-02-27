@@ -59,12 +59,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 col-md-4">
-                        <h4>
-                            Rapid note
-                        </h4>
-                        <p>
-                            Fast and reliable marketplace
-                        </p>
+                        <img src="http://127.0.0.1/rn2/resources/img/logo.png" width="150" height="100" class="ml-0"
+                            alt="">
+
 
                         <ul>
                             <li>
@@ -91,17 +88,17 @@
 
                         <ul>
                             <li>
-                                <a href="./index.php#about">
+                                <a href="/#about">
                                     <i class="fas fa-arrow-right"></i> About
                                 </a>
                             </li>
                             <li>
-                                <a href="./index.php#contact">
-                                    <i class="fas fa-arrow-right"></i> Contact
+                                <a href="/support">
+                                    <i class="fas fa-arrow-right"></i> Support
                                 </a>
                             </li>
                             <li>
-                                <a href="./index.php?action=cgu">
+                                <a href="/cgu">
                                     <i class="fas fa-arrow-right"></i> Terms of use
                                 </a>
                             </li>
@@ -115,17 +112,17 @@
 
                         <ul>
                             <li>
-                                <a href="./index.php?action=buy">
+                                <a href="./dashboard">
                                     <i class="fas fa-arrow-right"></i> Buy
                                 </a>
                             </li>
                             <li>
-                                <a href="./index.php?action=sell">
+                                <a href="./dashboard">
                                     <i class="fas fa-arrow-right"></i> Sell
                                 </a>
                             </li>
                             <li>
-                                <a href="./index.php?action=wallet">
+                                <a href="/wallet">
                                     <i class="fas fa-arrow-right"></i> Wallet
                                 </a>
                             </li>

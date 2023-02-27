@@ -21,6 +21,10 @@ Route::get('/home', function () {
     return view('pages/front/home');
 });
 
+Route::get('/buy', function () {
+    return view('pages/back/users/buy');
+});
+
 Route::get('/about', function () {
     return view('pages/front/about');
 });
@@ -39,6 +43,10 @@ Route::get('/users', function () {
 
 Route::get('/wallet', function () {
     return view('pages/back/wallet');
+});
+
+Route::get('/editRate', function () {
+    return view('pages/back/editRate');
 });
 
 Route::middleware([
@@ -96,3 +104,8 @@ Route::get('/rateApi/{id}', [
     App\Http\Controllers\RateController::class,
     'getRate',
 ]);
+
+Route::get('/paymentsApi', [
+    App\Http\Controllers\PaymentController::class,
+    'getPayments',
+])->name('paymentsApi');

@@ -64,7 +64,7 @@
                             ABOUT US
                         </h2>
 
-                        <p class="about__item__text mt-1">
+                        <p class="about__item__text mt-1 text">
                             Welcome to our cryptocurrency marketplace, where you can easily buy and sell digital assets
                             with other traders. Our platform provides a secure and efficient trading experience for a
                             wide range of cryptocurrencies. With competitive pricing, a user-friendly interface, and
@@ -166,13 +166,13 @@
 
                     <div class="simulator__buttons">
                         <div class="link">
-                            <a href="./index.php?action=buy">
+                            <a href="/buy">
                                 Buy
                             </a>
                         </div>
 
                         <div class="link">
-                            <a href="./index.php?action=buy">
+                            <a href="/sell">
                                 Sell
                             </a>
                         </div>
@@ -194,8 +194,8 @@
                                     Our Cryptocurrency Marketplace
                                 </h2>
 
-                                <p class="card__text__text text-left mt-3">
-                                    Our cryptocurrency marketplace is secure, efficient, and user-friendly.
+                                <p class=" text card__text__text text-left mt-3">
+                                    Rapidnote is secure, efficient, and user-friendly.
                                     We offer fast transaction times, competitive exchange rates, and various
                                     security measures to ensure that your account and transactions are protected.
                                     Whether you're a beginner or an experienced trader, our platform is the perfect
@@ -243,42 +243,5 @@
                 .
             </div>
         </section>
-        <!--payment methods ends-->
-
-
-        <section class="section" id='contact'>
-            <div class="container">
-                <div class="row pt-1 contact">
-                    <div class="col-sm-12 col-md-6 text-justify">
-                        <h2 class="mt-1">Contact us</h2>
-
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Amet error a odio non? Molestias pariatur
-                            voluptates facere dolorum ipsum magnam voluptate dicta
-                            nostrum debitis optio in cumque, repellat neque ullam?
-                        </p>
-
-                        <ul>
-                            <li>
-                                <i class="fab fa-whatsapp"></i>+233 55 00 00 00
-
-                            </li>
-                            <li>
-                                <i class="fas fa-envelope"></i> contact@rapidNote.com
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="col-sm-12 col-md-6 mx-auto mt-5">
-                        <button class="btn btn-primary mt-5 ml-5" @click='displayMessage'>
-                            Send us a message
-                        </button>
-
-                    </div>
-                </div>
-            </div>
-            <section>
-
     </div>
 </x-app-layout>

@@ -54,6 +54,37 @@ html, body {
   font-family: "Montserrat", sans-serif;
 }
 
+.currencies {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+  justify-content: start;
+  width: 230px;
+  margin: 10px auto 0 auto;
+}
+.currencies .currency {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+}
+.currencies .currency span {
+  color: #202022;
+}
+.currencies .currency img {
+  width: 25px;
+  height: 15px;
+  margin: 8px auto auto 5px;
+}
+
+.text {
+  color: grey;
+  font-size: 1em;
+}
+
 li {
   list-style: none;
 }
@@ -263,31 +294,6 @@ span {
 .dashboard__content .container .card .card-body .card-text img {
   width: 15px;
   height: 10px;
-}
-.dashboard__content .container .card .card-body .currencies {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: auto;
-  justify-content: start;
-  width: 230px;
-  margin: 10px auto 0 auto;
-}
-.dashboard__content .container .card .card-body .currencies .currency {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: auto;
-}
-.dashboard__content .container .card .card-body .currencies .currency span {
-  color: #202022;
-}
-.dashboard__content .container .card .card-body .currencies .currency img {
-  width: 25px;
-  height: 15px;
-  margin: 8px auto auto 5px;
 }
 .dashboard__content .container .card .card-body .buttons {
   display: flex;
@@ -543,7 +549,10 @@ span {
   background-color: #484C55;
   color: white;
 }
-.footer .container ul li {
+.footer .container .row h4 {
+  color: #04D282;
+}
+.footer .container .row ul li {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -552,27 +561,33 @@ span {
   margin: 10px auto;
   justify-content: flex-start;
 }
-.footer .container ul li a {
+.footer .container .row ul li a {
   color: white;
 }
-.footer .container ul li a i {
+.footer .container .row ul li a i {
   color: white;
 }
-.footer .container ul li .icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
+.footer .container .row ul li a:hover {
+  color: #04D282;
+}
+.footer .container .row ul li a:hover i {
+  color: #04D282;
+}
+.footer .container .row ul li .icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
   text-align: center;
   display: table;
-  background-color: white;
+  background-color: #04D282;
   margin-right: 10px;
 }
-.footer .container ul li .icon i {
+.footer .container .row ul li .icon i {
   color: #484C55;
   display: table-cell;
   vertical-align: middle;
 }
-.footer .container ul li p {
+.footer .container .row ul li p {
   display: table-cell;
   vertical-align: middle;
   margin: 8px auto auto 0;

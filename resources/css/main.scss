@@ -114,6 +114,31 @@ html, body{
     font-family: 'Montserrat', sans-serif;
 }
 
+.currencies{
+    @include flex();
+    justify-content: start;
+    width: 230px;
+    margin: 10px auto 0 auto;
+
+    .currency{
+        @include flex();
+        span{
+            color: $black;
+        }
+            img{
+                width: 25px;
+                height: 15px;
+                margin: 8px auto auto 5px;
+            }
+
+    }
+}
+
+.text{
+    color: grey;
+    font-size: 1em;
+}
+
 
 
 li{
@@ -361,25 +386,7 @@ span{
 
                     }
 
-                    .currencies{
-                        @include flex();
-                        justify-content: start;
-                        width: 230px;
-                        margin: 10px auto 0 auto;
 
-                        .currency{
-                            @include flex();
-                            span{
-                                color: $black;
-                            }
-                                img{
-                                    width: 25px;
-                                    height: 15px;
-                                    margin: 8px auto auto 5px;
-                                }
-
-                        }
-                    }
 
                     .buttons{
                         @include flex();
@@ -640,6 +647,10 @@ span{
      background-color: $grey-dark;
      color: $white;
      .container{
+       .row{
+        h4{
+            color: $blue;
+        }
         ul{
             li{
                 @include flex();
@@ -652,13 +663,21 @@ span{
                     }
                 }
 
+                a:hover{
+                    color: $blue;
+
+                    i{
+                        color: $blue;
+                    }
+                }
+
                 .icon{
-                    width: 40px;
-                    height: 40px;
-                    border-radius: 20px;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 15px;
                     text-align: center;
                     display: table;
-                    background-color: $white;
+                    background-color: $blue;
                     margin-right: 10px;
 
                     i{
@@ -675,6 +694,7 @@ span{
                 }
             }
         }
+       }
      }
 }
 

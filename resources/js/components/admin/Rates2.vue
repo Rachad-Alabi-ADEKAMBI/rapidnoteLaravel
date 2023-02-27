@@ -24,13 +24,13 @@
 
                         <div class="currencies">
                             <div class="currency">
-                                <span>12 ghc</span> <img
+                                <span>{{ format(detail.buying_price) }} GHC</span> <img
                                 src="http://127.0.0.1/rn2/resources/img/ghana-flag.png" alt="">
 
                             </div>
                             |
                             <div class="currency">
-                                <span> 12 usd</span> <img
+                                <span> USD {{ format(detail.buying_price/10) }}</span> <img
                                 src="http://127.0.0.1/rn2/resources/img/usd.png" alt=""
                                 class='flag'>
                             </div>
@@ -51,13 +51,13 @@
 
                         <div class="currencies">
                             <div class="currency">
-                                <span>12 ghc</span> <img
+                                <span>{{ format(detail.selling_price) }} GHC</span> <img
                                 src="http://127.0.0.1/rn2/resources/img/ghana-flag.png" alt="">
 
                             </div>
                             |
                             <div class="currency">
-                                <span> 12 usd</span> <img
+                                <span>USD{{ format(detail.selling_price/10) }}</span> <img
                                 src="http://127.0.0.1/rn2/resources/img/usd.png" alt=""
                                 class='flag'>
                             </div>
@@ -66,11 +66,10 @@
                           <hr>
 
                         <div class="buttons text-center">
-                            <button class="btn btn-primary mx-auto" @click="displayEdit()">
-                                <i class="fas fa-pen"></i> Edit
+                            <button class="btn btn-primary mx-auto" @click="displayEdit(detail.id)">
+                                <i bclass="fas fa-pen"></i> Edit
                             </button>
                         </div>
-
                           <hr>
 
 
@@ -80,48 +79,36 @@
         </div>
 
         <div class="row" v-if="showEdit">
-            <form class="form" action='./index.php?action=createRate' method='POST'>
-                    <div class="form__close">
-                        <a href="/dashboard">
-                            back
-                        </a>
-                    </div>
-                    <h1>
-                        Edit rate
-                    </h1>
-                    <div class="card p-3">
-
-                        <p> <img src="./public/img/<?= $data[
-                            'image'
-                        ] ?>" alt=""></p>
-                        <div class="row mb-2">
-                            <div class="col-md-8">
-                                <label for=""></label>New buying price: <br>
-                                <input type="text" placeholder='' name='buying_price'> ghc
-                            </div>
-                        </div> <br>
-
-                        <div class="row">
-                            <div class="col-8">
-                                <label for=""></label>New selling_price: <br>
-                                <input type="text" placeholder='' name='selling_price'> ghc
-                            </div>
-                        </div>
-
-                        <div class="row mt-2">
-                            <div class="col">
-                                <a class="btn btn-danger" type="submit">
-                                    Back
-                                </a>
-
-                                <button class="btn btn-primary" type="submit">
-                                    Change
-                                </button>
-                            </div>
-                        </div>
-
-                    </div>
-                </form>
+            <form class="form" action="/editRate" method="POST">
+        <div v-for="rate in rates" :key="rate.id">
+          <h1>Edit</h1>
+          <div class="card p-3">
+            <p></p>
+            <div class="row mb-2">
+              <div class="col-md-8">
+                <label>New buying price:</label><br>
+                <input type="text" placeholder="" name="buying_price"> ghc
+              </div>
+            </div><br>
+            <div class="row">
+              <div class="col-8">
+                <label>New selling_price:</label><br>
+                <input type="text" placeholder="" name="selling_price"> ghc
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col">
+                <a class="btn btn-danger" href="#">
+                  Back
+                </a>
+                <button class="btn btn-primary" type="submit">
+                  Change
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
         </div>
     </div>
 </template>
@@ -145,16 +132,6 @@
 mounted: function() {
    this.getAllRates();
 },
-computed: {
-            filteredItems() {
-                this.showAll = false;
-                this.showSearch = true;
-                return this.details.filter(ad => {
-                    return ad.name.toLowerCase().includes(this.searchText.toLowerCase()) &&
-                        ad.brand_name.toLowerCase().includes(this.searchText.toLowerCase())
-                })
-            }
-        },
 methods: {
     getAllRates(){
     axios.get('http://127.0.0.1:8000/ratesApi')
@@ -167,9 +144,8 @@ methods: {
     this.showRates= true;
     this.showEdit = false;
     },
-    displayEdit(){
-        this.showRates= false;
-        this.showEdit = true;
+    displayEdit(id) {
+     window.location.replace('/editRate?rate='+id)
     },
     format(num){
     let res = new Intl.NumberFormat('fr-FR', { maximumSignificantDigits: 3 }).format(num);
