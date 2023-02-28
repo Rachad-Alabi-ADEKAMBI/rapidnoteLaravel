@@ -8,6 +8,7 @@ $grey: rgb(34, 26, 26);
 $grey-light: #535353;
 $grey-dark: #484C55;
 $black: #202022;
+$orange: #f47032;
 
 @keyframes greeen {
     0% {
@@ -77,11 +78,7 @@ $black: #202022;
     font-weight: bold;
 }
 
-@mixin subtitle{
-    color: $blue;
-    font-size: 1.8em;
-    text-align: center;
-}
+
 
 @mixin button{
     background-color: $blue;
@@ -114,6 +111,10 @@ html, body{
     font-family: 'Montserrat', sans-serif;
 }
 
+.active{
+    display: none;
+}
+
 .currencies{
     @include flex();
     justify-content: start;
@@ -137,9 +138,16 @@ html, body{
 .text{
     color: grey;
     font-size: 1em;
+    font-weight: 500;
 }
 
+.text-white{
+    color: $white;
+}
 
+.text-justify{
+    text-align: justify;
+}
 
 li{
     list-style: none;
@@ -170,7 +178,12 @@ a:hover{
         border: $blue-dark;
 }
 
-
+    .subtitle{
+        color: $blue;
+        font-size: 1.8em;
+        text-align: center;
+        margin: auto;
+    }
 
 a{
     text-decoration: none;
@@ -260,6 +273,121 @@ span{
 
 }
 
+.hero{
+    height: auto;
+    min-height: 90vh;
+    margin: 0 auto;
+    display: block;
+    background-image: linear-gradient(to bottom, rgba(108, 148, 113, 0),
+     rgba(12, 102, 33, 0.5)), url('http://127.0.0.1/rn2/resources/img/money.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding-top: 50px;
+
+
+    &__content{
+        width: 80%;
+        margin: auto;
+        height: 100%;
+        padding-top: 110px;
+        text-align: center;
+
+        h1{
+            font-size: 3em;
+            font-style: italic;
+            color: white;
+        }
+
+        .text{
+            margin: 60px auto;
+            font-style: 1.8em;
+            font-weight: 800;
+
+        }
+
+        &__buttons{
+            width: 340px;
+            margin: 30px auto;
+
+            .btn{
+
+            }
+        }
+    }
+}
+
+.testimonials{
+    height: auto;
+    width: 100%;
+    min-height: 350px;
+    background-color: #ddd;
+    margin: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    &__top{
+        display: block;
+    }
+
+    .testimony{
+        width: 99%;
+        background: rgba(0, 0, 0, 0.4);
+        @include flex();
+        flex-direction: row;
+        border: 6px solid $white;
+
+        img{
+            width: 140px;
+            height: 110px;
+            margin: 50px auto auto 5px;
+            border-color: $white;
+        }
+
+        .testimony__text{
+            color: $white;
+            width: 75%;
+            float: right;
+            span{
+                font-weight: bold;
+            }
+
+            strong{
+                font-style: italic;
+            }
+
+            .text{
+
+            }
+        }
+    }
+}
+
+.services{
+    @include flex();
+    padding-left: 15px;
+    padding-right: 10px;
+    text-align: center;
+
+
+
+   &__list{
+    .service{
+        text-align: center;
+        i{
+            color: $orange;
+            font-size: 2.2em;
+            margin: auto;
+        }
+
+        h3{
+            font-size: 1.3em;
+        }
+    }
+   }
+}
+
 
 .dashboard{
 
@@ -306,6 +434,10 @@ span{
                                 margin-right: 10px;
                             }
                         }
+                    }
+
+                    .active{
+                        background-color: $blue-dark;
                     }
 
                     a:hover{
@@ -406,34 +538,6 @@ span{
 }
 
 
-.simulator{
-    @include flex(column);
-    text-align: center;
-    height: 250px;
-    width: 100%;
-    margin: 30px auto 10px auto;
-
-    h2{
-        @include subtitle();
-    }
-
-    &__text{
-        margin: 15px auto;
-    }
-
-    &__buttons{
-        @include flex;
-        animation: entrance 3s ease-in-out;
-        .link{
-            margin: 15px;
-            @include link();
-
-            a{
-                color: $white;
-            }
-        }
-    }
-}
 
 
 
@@ -443,9 +547,7 @@ span{
     width: 100%;
     margin: 60px auto;
 
-    &__title{
-        @include subtitle;
-    }
+
 
     &__items{
         text-align: center;
@@ -459,7 +561,7 @@ span{
             img{
                 width: 130px;
                 height: 130px;
-                border-radius: 50px;
+                border-radius: 5px;
                 margin: auto;
             }
         }
@@ -479,17 +581,17 @@ span{
 
 
                .box{
-                width: 230px;
+                width: 220px;
                 height: 120px;
                 margin: 15px auto;
                 color: $white;
                 font-weight: bold;
-                padding-top: 20px;
+                padding-top: 10px;
 
                 .i{
                     color: $white;
                     font-weight: bold;
-                    font-size: 2em;
+                    font-size: 1.8em;
                 }
 
                }
@@ -552,7 +654,7 @@ span{
                     width: 100%;
                     margin: auto;
                     &__title{
-                        @include subtitle();
+                     //   @include subtitle();
                     }
 
                     &__text{
@@ -1025,6 +1127,32 @@ span{
             }
         }
     }
+
+     .hero{
+            &__content{
+                padding-top: 80px;
+
+                h1{
+                    font-size: 2.7em;
+                }
+
+                p{
+                    margin: 40px auto;
+                }
+
+                &__buttons{
+                    display: block;
+                    flex-direction: column;
+                    display: none;
+
+                    width: 190px;
+                    .btn{
+
+                    }
+                }
+            }
+        }
+
 
     .top{
         height: auto;

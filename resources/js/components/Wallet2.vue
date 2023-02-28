@@ -15,6 +15,7 @@ template de la page 'mes transactins'
        <th scope="col">Date</th>
        <th scope="col">Name</th>
        <th scope="col">Amount</th>
+       <th scope="col">Status</th>
      </tr>
    </thead>
    <tbody>
@@ -23,6 +24,7 @@ template de la page 'mes transactins'
        <td data-label="Date">15/01/2023</td>
        <td data-label="Name">Buying from Rapid note</td>
        <td data-label="Amount">230 ghc</td>
+       <td data-label="Status">Pending</td>
      </tr>
    </tbody>
  </table>

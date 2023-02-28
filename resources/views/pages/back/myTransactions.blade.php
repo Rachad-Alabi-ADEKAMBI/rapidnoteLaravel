@@ -16,7 +16,7 @@
                         <p class="text text-bold">
                             /my transactions
                         </p>
-                        <Transactions />
+                        <Wallet2 />
                     </div>
                 </div>
             </div>

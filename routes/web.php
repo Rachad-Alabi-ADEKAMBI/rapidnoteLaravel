@@ -25,6 +25,10 @@ Route::get('/buy', function () {
     return view('pages/back/users/buy');
 });
 
+Route::get('/sell', function () {
+    return view('pages/back/users/sell');
+});
+
 Route::get('/about', function () {
     return view('pages/front/about');
 });

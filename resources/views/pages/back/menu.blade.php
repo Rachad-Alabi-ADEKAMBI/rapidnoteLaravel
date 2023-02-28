@@ -31,8 +31,8 @@
         </ul>
         <?php } else { ?>
         <ul>
-            <li>
-                <a class='btn btn-primary' href="/dashboard">
+            <li class="{{ Request::is('/dashboard') ? 'active' : '' }}">
+                <a class="btn btn-primary" href="/dashboard">
                     <i class="fas fa-money-bill-trend-up"></i> Rates
                 </a>
             </li>

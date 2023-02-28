@@ -1,9 +1,9 @@
 <template>
     <div class="container">
       <div class="row">
-            <form class='form' v-if="showBuy">
+            <form class='form' v-if="showSell">
                                 <h1>
-                                    Buy currrency
+                                    Sell currrency
                                 </h1>
 
                                 <hr>
@@ -97,14 +97,14 @@
 
   <script>
    export default {
-  name: 'Buy',
+  name: 'Sell',
   props: {
     msg: String
   },
   data() {
     return {
         details:[],
-        showBuy: false,
+        showSell: false,
         showPayments: false
 
     }
@@ -122,7 +122,7 @@
     axios.get('http://127.0.0.1:8000/rateApi/1')
         .then(response => {
         this.details = response.data;
-        this.showBuy = true;
+        this.showSell = true;
         this.showPayments = false
         })
         .catch(error => {
@@ -130,7 +130,7 @@
         });
     },
     displayPayments(){
-        this.showBuy = false;
+        this.showSell = false;
         this.showPayments = true;
     },
     format(num){

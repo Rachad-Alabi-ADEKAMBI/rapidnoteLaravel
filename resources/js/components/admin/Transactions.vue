@@ -63,6 +63,7 @@
                             <th scope="col">Amount</th>
                             <th scope="col">Seller_name</th>
                             <th scope="col">Buyer_name</th>
+                            <th scope="col">Status</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -73,6 +74,7 @@
                             <td data-label="Amount">{{ format(detail.amount) }} ghc</td>
                             <td data-label="Name">{{ detail.seller_name }}</td>
                             <td data-label="Amount">{{ detail.buyer_name  }}</td>
+                            <td data-label="Status">{{ detail.status  }}</td>
                             </tr>
                         </tbody>
                         </table>
